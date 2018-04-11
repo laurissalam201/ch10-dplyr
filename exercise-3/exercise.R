@@ -1,7 +1,7 @@
 # Exercise 3: using the pipe operator
 
 # Install (if needed) and load the "dplyr" library
-#install.packages("dplyr")
+install.packages("dplyr")
 library("dplyr")
 
 # Install (if needed) and load the "fueleconomy" package
@@ -11,12 +11,17 @@ library(fueleconomy)
 
 # Which 2015 Acura model has the best hwy MGH? (Use dplyr, but without method
 # chaining or pipes--use temporary variables!)
-
+acuras <- filter(vehicles, make == "Acura", year == 2015)
+best_hwy <- filter(acuras, hwy == max(hwy))
+best_model <- select(best_hwy, model)
 
 # Which 2015 Acura model has the best hwy MPG? (Use dplyr, nesting functions)
-
+best_model <- select(filter(filter(vehicles, make == "Acura", year == 2015), hwy == max(hwy)), model)
 
 # Which 2015 Acura model has the best hwy MPG? (Use dplyr and the pipe operator)
+best_model <- filter(vehicles, make == "Acura", year == 2015) %>%
+          filter(hwy == max(hwy)) %>%
+          select(model)
 
 
 
