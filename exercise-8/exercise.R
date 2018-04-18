@@ -1,17 +1,17 @@
 # Exercise 8: exploring data sets
 
 # Load the dplyr library
-
+library(dplyr)
 
 # Read in the data (from `data/pupulitzer-circulation-data.csv`). Remember to 
 # not treat strings as factors!
-
+pupulitzer_circulation <- read.csv(file = "data/pulitzer-circulation-data.csv", stringsAsFactors = FALSE)
 
 # View in the data set. Start to understand what the data set contains
-
+View(pupulitzer_circulation)
 
 # Print out the names of the columns for reference
-
+colnames(pupulitzer_circulation)
 
 # Use the 'str()' function to also see what types of values are contained in 
 # each column (you're looking at the second column after the `:`)
