@@ -16,7 +16,7 @@ colnames(pupulitzer_circulation)
 # Use the 'str()' function to also see what types of values are contained in 
 # each column (you're looking at the second column after the `:`)
 # Did any value type surprise you? Why do you think they are that type?
-
+str()
 
 # Add a column to the data frame called 'Pulitzer.Prize.Change` that contains 
 # the difference in the number of times each paper was a winner or finalist 
